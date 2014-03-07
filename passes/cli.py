@@ -1,4 +1,4 @@
-from . import Generator
+from . import multi_gen
 import argparse
 
 
@@ -14,6 +14,5 @@ def main():
     print('Password length: {}'.format(args.length))
     print('Using charset: {}'.format(args.chars or 'default'))
 
-    generator = Generator(args.chars)
-    for i, phrase in enumerate(generator.multiGen(args.number, args.length)):
-        print('{}\t{}'.format(i, phrase))
+    for i, result in enumerate(multi_gen(args.number, args.length)):
+        print('{}\t{}'.format(i, result))
