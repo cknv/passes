@@ -3,7 +3,7 @@ Passes
 
 Passes is a small ulitiy to generate random passwords, or rather random strings out of a given set of characters. Which *can* be used as random passwords.
 
-.. code-block:: bash
+.. code-block:: shell
     $ passes
     Generating: 1
     Password length: 10
