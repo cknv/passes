@@ -10,8 +10,10 @@ lookup = {
 
 
 def mutate(word, rate=0.5):
+    mutated_chars = []
     for char in word:
         if char in lookup and random() > rate:
-            yield choice(lookup[char])
+            mutated_chars.append(choice(lookup[char]))
         else:
-            yield char
+            mutated_chars.append(char)
+    return ''.join(mutated_chars)
