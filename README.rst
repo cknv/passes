@@ -21,4 +21,6 @@ The CLI was the original purpose of this utility, but an actual way of interacti
 
 Passes is in no way exceptional, and I believe any programmer with a decent knowledge of Python could crack out a similar (perhaps better) implementation within a short time.
 
+Passes currently works, but I would not consider it stable, as I would like to rename some things in the api, not to mention that there is probably room for improvement.
+
 As a final, disclaimer, I am in no way a security expert, but I do know that this implementation is subject to limitations in the random value generator of the platform it is running on, and that there may be all kinds of problems with the implementation. Generally I find it good enough to make me a random password, whenever I have the need for such.
