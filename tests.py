@@ -1,5 +1,6 @@
 from passes import Generator, multi_gen, Phraser
 import unittest
+import re
 
 
 class TestGeneratorNoCharset(unittest.TestCase):
@@ -30,6 +31,17 @@ class TestIteration(unittest.TestCase):
     def test_iteration(self):
         it = multi_gen(5)
         assert len(list(it)) == 5
+
+
+class TestPhraseGeneration(unittest.TestCase):
+    def setUp(self):
+        word_file = '/usr/share/dict/words'
+        self.phraser = Phraser(word_file)
+
+    def test_phrase(self):
+        phrase = self.phraser.generate(5)
+        words = re.split(r'[ _-]', phrase)
+        assert len(words) == 5
 
 if __name__ == '__main__':
     unittest.main()
