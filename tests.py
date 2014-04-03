@@ -1,4 +1,4 @@
-from passwords import Generator
+from passes import Generator, multi_gen
 import unittest
 
 
@@ -24,11 +24,11 @@ class TestResultLength(unittest.TestCase):
 
 
 class TestIteration(unittest.TestCase):
-    def setUp(self):
-        self.generator = Generator()
+    # def setUp(self):
+    #     self.generator = Generator()
 
     def test_iteration(self):
-        it = self.generator.multiGen(5)
+        it = multi_gen(5)
         assert len(list(it)) == 5
 
 if __name__ == '__main__':
